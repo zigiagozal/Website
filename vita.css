@@ -1,0 +1,164 @@
+/* vita.css — Blue Serenity theme for index.html
+   Palette taken from the provided image.
+*/
+:root{
+  --blue-100: #EDF2FB;
+  --blue-200: #E2EAFC;
+  --blue-300: #D7E3FC;
+  --blue-400: #CCDBFD;
+  --blue-500: #C1D3FE;
+  --blue-600: #B6CCFE;
+  --blue-700: #ABC4FF;
+
+  --bg: #ffffff;
+  --card-bg: rgba(255,255,255,0.85);
+  --muted: #5b6b7a;
+  --text: #071428;
+  --radius: 12px;
+  --gap: 1.25rem;
+  --container-width: 1100px;
+}
+
+/* Basic resets */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background: linear-gradient(180deg,var(--bg) 0%, #f7fbff 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+.container{
+  width:calc(100% - 2rem);
+  max-width:var(--container-width);
+  margin:0 auto;
+}
+
+/* Hero */
+.hero{
+  padding:3rem 0 2rem;
+  background: linear-gradient(90deg,var(--blue-100),var(--blue-200) 33%,var(--blue-300) 66%,var(--blue-400));
+}
+.hero-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--gap);
+}
+
+.profile{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+
+.avatar{
+  width:88px;
+  height:88px;
+  border-radius:14px;
+  background: linear-gradient(180deg,var(--blue-500),var(--blue-700));
+  color:var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:1.4rem;
+  box-shadow: 0 6px 18px rgba(11,37,92,0.06);
+}
+
+.intro h1{
+  margin:0 0 0.25rem;
+  font-size:1.35rem;
+}
+.role{
+  margin:0;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+.lead{
+  margin:0.5rem 0 0;
+  color:#15304a;
+  max-width:52ch;
+}
+
+.actions{margin-top:0.5rem}
+
+.social .icon{
+  display:inline-block;
+  padding:0.45rem 0.7rem;
+  border-radius:9px;
+  background:rgba(255,255,255,0.6);
+  color:var(--text);
+  text-decoration:none;
+  border:1px solid rgba(7,20,40,0.06);
+  box-shadow:0 4px 10px rgba(11,37,92,0.04);
+}
+
+/* Cards layout */
+.cards{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:var(--gap);
+  margin:1.5rem 0;
+}
+
+.card{
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  padding:1.25rem;
+  border:1px solid rgba(11,37,92,0.04);
+  box-shadow: 0 8px 30px rgba(11,37,92,0.04);
+}
+
+.card h2, .card h3{margin:0 0 0.6rem}
+
+.about p{margin:0}
+
+.stats ul{padding:0;margin:0;list-style:none}
+.stats li{padding:0.25rem 0;border-top:1px dashed rgba(11,37,92,0.03)}
+.stats li:first-child{border-top:none}
+
+/* Skills */
+.skills{margin:0 0 1.5rem}
+.skill-list{display:flex;flex-wrap:wrap;gap:0.6rem;padding:0;margin:0;list-style:none}
+.skill-list li{
+  background:linear-gradient(180deg,var(--blue-200),var(--blue-300));
+  padding:0.5rem 0.75rem;border-radius:8px;color:var(--text);
+  font-weight:600;
+}
+
+/* Contact */
+.contact a{color:#0b4aa8;text-decoration:none}
+
+/* Footer */
+.footer{padding:1.25rem 0;color:var(--muted);font-size:0.95rem}
+.footer .container{display:flex;justify-content:center}
+
+/* Small utilities */
+.row{display:flex;gap:1rem}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column;align-items:flex-start}
+  .cards{grid-template-columns:1fr;}
+  .avatar{width:72px;height:72px}
+}
+
+/* Decorative palette preview used optionally for design pages
+   (not required for the page but keeps the theme intact) */
+.palette{
+  display:flex;gap:0.5rem;margin-top:1rem;border-radius:12px;overflow:hidden
+}
+.palette > div{flex:1;padding:1.5rem 0;text-align:center;font-weight:700}
+.palette .p1{background:var(--blue-100)}
+.palette .p2{background:var(--blue-200)}
+.palette .p3{background:var(--blue-300)}
+.palette .p4{background:var(--blue-400)}
+.palette .p5{background:var(--blue-500)}
+.palette .p6{background:var(--blue-600)}
+.palette .p7{background:var(--blue-700)}
+
